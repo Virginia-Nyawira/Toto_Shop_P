@@ -7,28 +7,32 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Container(
-            width: double.maxFinite,
-            height: double.maxFinite,
-  decoration: const BoxDecoration(
-    image: DecorationImage(
-      image: AssetImage("assets/backg.jpg")
-    )
-  ),
-),
-Positioned(
-  top: 10,
-  child: AppBar(
-  backgroundColor: Colors.white54,
-  title: Text("Toto World",
-  style: titleStyle(),),
-)),
-// Positioned(child: GridView(gridDelegate: ))
-          
-        ],
+      child: SafeArea(
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Positioned(
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: const BoxDecoration(
+                    image:
+                        DecorationImage(
+                          fit: BoxFit.fitHeight,
+                          image: AssetImage("images/backg.jpg"))),
+              ),
+            ),
+            Positioned(
+                top: 10,
+                right: 150,
+                child:  Text(
+                    "Toto World",
+                    style: titleStyle(),
+                  ),
+                )
+            // Positioned(child: GridView(gridDelegate: ))
+          ],
+        ),
       ),
     );
   }

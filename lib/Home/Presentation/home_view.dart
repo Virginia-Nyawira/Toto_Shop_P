@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:toto_shop/Presentation/styles.dart';
+import 'package:toto_shop/Config/Themes/styles.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

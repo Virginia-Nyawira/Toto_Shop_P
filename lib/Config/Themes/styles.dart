@@ -8,3 +8,12 @@ TextStyle titleStyle(){
     fontWeight: FontWeight.w900,
   );
 }
+
+TextStyle bodyText(){
+  return const TextStyle(
+    fontSize: 12.0, 
+    color: Colors.black,
+    letterSpacing: 2.0,
+    fontWeight: FontWeight.w500,
+  );
+}

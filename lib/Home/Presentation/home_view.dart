@@ -58,6 +58,24 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Popular",
+                  style: bodyText(),
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "View All",
+                      style: bodyText(), 
+                    ))
+              ],
+            ),
+            const SizedBox(
+              height: 5,
+            ),
             Expanded(
                 child: CustomScrollView(
               slivers: [
@@ -74,9 +92,8 @@ class HomePage extends StatelessWidget {
                         width: 30,
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 119, 25, 96),
-                          borderRadius: BorderRadius.circular(
-                              15), 
-                        ), 
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       );
                     },
                     childCount: 15,

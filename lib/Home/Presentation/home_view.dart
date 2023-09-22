@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
 import 'package:toto_shop/Widgets/home_carousel.dart';
+import 'package:toto_shop/Widgets/home_products_grid.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -62,34 +63,11 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
        //Items gridview list goes here
-            Expanded(
-                child: CustomScrollView(
-              slivers: [
-                SliverGrid(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 10.0,
-                  ),
-                  delegate: SliverChildBuilderDelegate(
-                    (context,index) {
-                      return Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 119, 25, 96),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      );
-                    },
-                    childCount: 10,
-                  ),
-                ),
-              ],
-            ))
+            HomeProductGrid()
           ],
         ),
       ),
     );
   }
 }
+

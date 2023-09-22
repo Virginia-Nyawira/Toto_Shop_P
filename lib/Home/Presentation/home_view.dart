@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
+import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 import 'package:toto_shop/Widgets/home_carousel.dart';
 import 'package:toto_shop/Widgets/home_products_grid.dart';
 
@@ -63,7 +65,10 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
        //Items gridview list goes here
-            const HomeProductGrid()
+            //const HomeProductGrid()
+            ChangeNotifierProvider(create: (context)=>   HomeProductsProvider(),
+            child: const HomeProductGrid(),
+            )
           ],
         ),
       ),

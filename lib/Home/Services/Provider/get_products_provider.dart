@@ -8,7 +8,7 @@ class HomeProductsProvider with ChangeNotifier{
   bool isLoaded = false;
 
 List<HomeProducts> _myHomeProducts=[];
-  List<HomeProducts> get toDos =>_myHomeProducts;
+  List<HomeProducts> get homeProducts =>_myHomeProducts;
 
   Future<void> getAllProducts () async{
     isLoaded=true;

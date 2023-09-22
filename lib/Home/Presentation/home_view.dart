@@ -38,23 +38,6 @@ class HomePage extends StatelessWidget {
                         child: Text("data"),
                       );
                     })),
-            //Items gridview list goes here
-            // GridView.builder(
-            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //     crossAxisCount: 2, // Number of items in each row
-            //     mainAxisSpacing: 10.0, // Spacing between rows
-            //     crossAxisSpacing: 10.0, // Spacing between columns
-            //   ),
-            //   itemCount: 15, // Replace with the actual length of your list
-            //   itemBuilder: (BuildContext context, int index) {
-            //     // Replace this with your custom item widget
-            //     return Container(
-            //       height: 30,
-            //       width: 30,
-            //       color: Color.fromARGB(255, 11, 11, 53),
-            //     );
-            //   },
-            // )
             const SizedBox(
               height: 5,
             ),
@@ -76,6 +59,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
+       //Items gridview list goes here
             Expanded(
                 child: CustomScrollView(
               slivers: [
@@ -86,7 +70,7 @@ class HomePage extends StatelessWidget {
                     crossAxisSpacing: 10.0,
                   ),
                   delegate: SliverChildBuilderDelegate(
-                    (BuildContext context, int index) {
+                    (context,index) {
                       return Container(
                         height: 30,
                         width: 30,
@@ -96,7 +80,7 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
-                    childCount: 15,
+                    childCount: 10,
                   ),
                 ),
               ],

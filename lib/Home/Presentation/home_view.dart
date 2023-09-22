@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
+import 'package:toto_shop/Widgets/home_carousel.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -25,19 +26,20 @@ class HomePage extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             //Carousel goes here
-            Container(
-                color: Colors.amber[50],
-                height: 150,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 20,
-                    itemBuilder: (context, index) {
-                      return const Card(
-                        shadowColor: Color.fromARGB(255, 114, 89, 9),
-                        elevation: 10,
-                        child: Text("data"),
-                      );
-                    })),
+            carouselView(),
+            // Container(
+            //     color: Colors.amber[50],
+            //     height: 150,
+            //     child: ListView.builder(
+            //         scrollDirection: Axis.horizontal,
+            //         itemCount: 20,
+            //         itemBuilder: (context, index) {
+            //           return const Card(
+            //             shadowColor: Color.fromARGB(255, 114, 89, 9),
+            //             elevation: 10,
+            //             child: Text("data"),
+            //           );
+            //         })),
             const SizedBox(
               height: 5,
             ),

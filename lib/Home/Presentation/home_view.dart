@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
        //Items gridview list goes here
-            HomeProductGrid()
+            const HomeProductGrid()
           ],
         ),
       ),

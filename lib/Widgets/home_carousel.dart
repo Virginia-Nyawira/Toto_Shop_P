@@ -27,7 +27,7 @@ Widget carouselView(){
                 builder: (BuildContext context) {
                   return Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Image.asset(
                       imagePath,
                       fit: BoxFit.cover,

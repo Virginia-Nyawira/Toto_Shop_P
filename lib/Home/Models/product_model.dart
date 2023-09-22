@@ -1,14 +1,14 @@
 // To parse this JSON data, do
 //
-//     final products = productsFromJson(jsonString);
+//     final homeProducts = homeProductsFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Products> productsFromJson(String str) => List<Products>.from(json.decode(str).map((x) => Products.fromJson(x)));
+List<HomeProducts> homeProductsFromJson(String str) => List<HomeProducts>.from(json.decode(str).map((x) => HomeProducts.fromJson(x)));
 
-String productsToJson(List<Products> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String homeProductsToJson(List<HomeProducts> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Products {
+class HomeProducts {
     String? id;
     String? image;
     String? description;
@@ -18,7 +18,7 @@ class Products {
     String? size;
     String? seller;
 
-    Products({
+    HomeProducts({
         this.id,
         this.image,
         this.description,
@@ -29,7 +29,7 @@ class Products {
         this.seller,
     });
 
-    Products copyWith({
+    HomeProducts copyWith({
         String? id,
         String? image,
         String? description,
@@ -39,7 +39,7 @@ class Products {
         String? size,
         String? seller,
     }) => 
-        Products(
+        HomeProducts(
             id: id ?? this.id,
             image: image ?? this.image,
             description: description ?? this.description,
@@ -50,7 +50,7 @@ class Products {
             seller: seller ?? this.seller,
         );
 
-    factory Products.fromJson(Map<String, dynamic> json) => Products(
+    factory HomeProducts.fromJson(Map<String, dynamic> json) => HomeProducts(
         id: json["id"],
         image: json["image"],
         description: json["description"],

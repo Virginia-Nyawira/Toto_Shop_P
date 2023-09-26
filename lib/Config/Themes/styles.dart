@@ -19,7 +19,7 @@ TextStyle bodyText(){
 }
 TextStyle productText(){
   return const TextStyle(
-    fontSize: 10.0, 
+    fontSize: 9.0, 
     color: Color.fromARGB(255, 79, 110, 156),
     letterSpacing: 2.0,
     fontWeight: FontWeight.w500,
@@ -27,7 +27,7 @@ TextStyle productText(){
 }
 TextStyle npriceText(){
   return const TextStyle(
-    fontSize: 9.0, 
+    fontSize: 8.0, 
     color: Colors.black,
     letterSpacing: 2.0,
     fontWeight: FontWeight.w500,
@@ -35,7 +35,7 @@ TextStyle npriceText(){
 }
 TextStyle opriceText(){
   return const TextStyle(
-    fontSize: 10.0, 
+    fontSize: 9.0, 
     color: Color.fromARGB(255, 128, 124, 124),
     letterSpacing: 2.0,
     fontWeight: FontWeight.w500,

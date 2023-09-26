@@ -19,8 +19,9 @@ class _HomeProductGridState extends State<HomeProductGrid> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<HomeProductsProvider>(context, listen: false).getAllProducts();
-      hasData= true;
+      Provider.of<HomeProductsProvider>(context, listen: false)
+          .getAllProducts();
+      hasData = true;
     });
   }
 
@@ -29,56 +30,81 @@ class _HomeProductGridState extends State<HomeProductGrid> {
     return Expanded(
         child: CustomScrollView(
       slivers: [
-        Consumer<HomeProductsProvider>(
-          builder: (context,value,child) {
-            final homeProduct = value.homeProducts;
-            return SliverGrid(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (context,index) {
-                  final item = homeProduct[index];
-                  return Container(
-                    padding: const EdgeInsets.all(5),
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 252, 255),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Image.network(item.image ?? "images/image1.jpg", height: 200, width: 200,
-                           fit: BoxFit.cover,) 
-                           ),
-                           const Divider(), 
-                        //Image.network(item.image ?? "images/image1.jpg"), 
-                        Expanded(child: Text("${item.description}", style: productText(),)), 
-                        Text("By ${item.seller}", style: productText(),),
-                        Expanded( 
-                          child: Column(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text("Was: Ksh${item.oldPrice},", style: opriceText() ), 
-                              Text("Now: Ksh${item.oldPrice}", style: npriceText()),
-                            ],
-                          ),
+        Consumer<HomeProductsProvider>(builder: (context, value, child) {
+          final homeProduct = value.homeProducts;
+          return SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10.0,
+              crossAxisSpacing: 10.0,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final item = homeProduct[index];
+                return Container(
+                  padding: const EdgeInsets.all(5),
+                  // height: 150,
+                  // width: 100,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(80, 207, 204, 207),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("${item.discount} % off",style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontSize: 10.0
+                            ),),
+                          
+                            IconButton(onPressed: (){},
+                             icon: Icon(Icons.favorite_outline, size: 18,))
+                          ],
                         ),
-                      ],
-                    ),
-                  );
-                },
-                childCount: homeProduct.length,
-              ),
-            );
-          }
-        ),
+                      ),
+                      Expanded(
+                          flex: 3,
+                          child: Image.network(
+                            
+                            item.image ?? "images/image1.jpg",
+                            fit: BoxFit.fill,
+                            // height: 170,
+                            // width: 100,
+                          )),
+                      const Divider(),
+                      //Image.network(item.image ?? "images/image1.jpg"),
+                      Expanded(
+                          child: Text(
+                        "${item.description}",
+                        style: productText(),
+                      )),
+                      Text(
+                        "By ${item.seller}",
+                        style: productText(),
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Was: Ksh${item.oldPrice}",
+                                style: opriceText()),
+                            Text("Now: Ksh${item.newPrice}",
+                                style: npriceText()),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              childCount: homeProduct.length,
+            ),
+          );
+        }),
       ],
     ));
   }

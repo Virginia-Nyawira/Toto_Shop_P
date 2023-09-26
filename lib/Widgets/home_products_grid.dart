@@ -41,14 +41,14 @@ class _HomeProductGridState extends State<HomeProductGrid> {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final item = homeProduct[index];
-                return Container(
-                  padding: const EdgeInsets.all(5),
+                return Card(
+                  //padding: const EdgeInsets.all(5),
                   // height: 150,
                   // width: 100,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(80, 207, 204, 207),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
+                  // decoration: BoxDecoration(
+                  //   color: const Color.fromARGB(80, 207, 204, 207),
+                  //   borderRadius: BorderRadius.circular(5),
+                  // ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

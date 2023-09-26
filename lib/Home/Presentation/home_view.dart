@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 import 'package:toto_shop/Widgets/home_carousel.dart';
 import 'package:toto_shop/Widgets/home_products_grid.dart';
+
+import '../../Widgets/categories.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,26 +29,28 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //Carousel goes here
+ //Carousel goes here
             carouselView(),
-            // Container(
-            //     color: Colors.amber[50],
-            //     height: 150,
-            //     child: ListView.builder(
-            //         scrollDirection: Axis.horizontal,
-            //         itemCount: 20,
-            //         itemBuilder: (context, index) {
-            //           return const Card(
-            //             shadowColor: Color.fromARGB(255, 114, 89, 9),
-            //             elevation: 10,
-            //             child: Text("data"),
-            //           );
-            //         })),
             const SizedBox(
               height: 5,
             ),
+ //Choose your need
+            Text(
+              "Choose your need",
+              style: bodyText().copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+//ListView here
+            const CategoryList(),
+
+            const SizedBox(
+              height: 5,
+            ),
+
+ //Grid view of popular products
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -57,17 +62,18 @@ class HomePage extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       "View All",
-                      style: bodyText(), 
+                      style: bodyText(),
                     ))
               ],
             ),
             const SizedBox(
               height: 5,
             ),
-       //Items gridview list goes here
+            //Items gridview list goes here
             //const HomeProductGrid()
-            ChangeNotifierProvider(create: (context)=>   HomeProductsProvider(),
-            child: const HomeProductGrid(),
+            ChangeNotifierProvider(
+              create: (context) => HomeProductsProvider(),
+              child: const HomeProductGrid(),
             )
           ],
         ),

@@ -62,7 +62,7 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                             ),),
                           
                             IconButton(onPressed: (){},
-                             icon: Icon(Icons.favorite_outline, size: 18,))
+                             icon: const Icon(Icons.favorite_outline, size: 18,))
                           ],
                         ),
                       ),

@@ -10,7 +10,7 @@ Widget carouselView(){
   'images/boy.jpg',
 ];
 
-  return Container(
+  return SizedBox(
     width: double.infinity, // Set the desired width for the widget
       height: 100, // Set the desired height for the widget
       child: Stack(

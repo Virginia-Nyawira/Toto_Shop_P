@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:toto_shop/Config/Themes/styles.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 
 class HomeProductGrid extends StatefulWidget {
@@ -41,13 +42,36 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                 (context,index) {
                   final item = homeProduct[index];
                   return Container(
-                    height: 30,
-                    width: 30,
+                    padding: const EdgeInsets.all(5),
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 119, 25, 96),
-                      borderRadius: BorderRadius.circular(15),
+                      color: const Color.fromARGB(255, 255, 252, 255),
+                      borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(item.description?? 'No description'),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Image.network(item.image ?? "images/image1.jpg", height: 200, width: 200,
+                           fit: BoxFit.cover,) 
+                           ),
+                           const Divider(), 
+                        //Image.network(item.image ?? "images/image1.jpg"), 
+                        Expanded(child: Text("${item.description}", style: productText(),)), 
+                        Text("By ${item.seller}", style: productText(),),
+                        Expanded( 
+                          child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text("Was: Ksh${item.oldPrice},", style: opriceText() ), 
+                              Text("Now: Ksh${item.oldPrice}", style: npriceText()),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 },
                 childCount: homeProduct.length,

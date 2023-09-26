@@ -17,3 +17,27 @@ TextStyle bodyText(){
     fontWeight: FontWeight.w500,
   );
 }
+TextStyle productText(){
+  return const TextStyle(
+    fontSize: 10.0, 
+    color: Color.fromARGB(255, 79, 110, 156),
+    letterSpacing: 2.0,
+    fontWeight: FontWeight.w500,
+  );
+}
+TextStyle npriceText(){
+  return const TextStyle(
+    fontSize: 9.0, 
+    color: Colors.black,
+    letterSpacing: 2.0,
+    fontWeight: FontWeight.w500,
+  );
+}
+TextStyle opriceText(){
+  return const TextStyle(
+    fontSize: 10.0, 
+    color: Color.fromARGB(255, 128, 124, 124),
+    letterSpacing: 2.0,
+    fontWeight: FontWeight.w500,
+  );
+}

@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context)=> HomeProductsProvider()),
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => HomeProductsProvider(), 
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',

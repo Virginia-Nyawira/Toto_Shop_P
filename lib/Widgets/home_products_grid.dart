@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
+import 'package:toto_shop/Home/Presentation/favourite_products.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 
 class HomeProductGrid extends StatefulWidget {
@@ -62,14 +63,14 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                                   fontStyle: FontStyle.italic, fontSize: 10.0),
                             ),
 
-    /// Add to tha favourites List Here
-    /// Like Button goes here
+                            /// Add to tha favourites List Here
+                            /// Like Button goes here
                             IconButton(
                                 onPressed: () {
                                   Provider.of<HomeProductsProvider>(context,
                                           listen: false)
                                       .addToFavourite(item);
-                                      print("iTEM ADDED");
+                                  print("iTEM ADDED");
                                 },
                                 icon: Icon(
                                   Icons.favorite_outline,
@@ -114,6 +115,7 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                           ],
                         ),
                       ),
+  
                     ],
                   ),
                 );

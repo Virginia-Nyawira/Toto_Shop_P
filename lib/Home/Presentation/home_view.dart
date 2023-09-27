@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
+import 'package:toto_shop/Home/Presentation/favourite_products.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 import 'package:toto_shop/Widgets/home_carousel.dart';
 import 'package:toto_shop/Widgets/home_products_grid.dart';
@@ -18,7 +19,14 @@ class HomePage extends StatelessWidget {
         leading: const Drawer(),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => FavouriteProducts(),
+    ),
+  );
+},
               icon: const Icon(
                 Icons.badge_outlined,
                 size: 29,

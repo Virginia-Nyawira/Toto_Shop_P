@@ -28,9 +28,9 @@ List<HomeProducts> _myHomeProducts=[];
   addToFavourite(HomeProducts favProduct){
     _favouriteProducts.add(favProduct);
     notifyListeners();
+      print(_favouriteProducts);
     // if(_favouriteProducts.contains(favProduct)){
     //   _favouriteProducts.add(favProduct);
-      print(_favouriteProducts);
     // print("favouriteProducts succesfully added");
     //   notifyListeners(); 
     // }

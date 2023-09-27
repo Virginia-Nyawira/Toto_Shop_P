@@ -69,6 +69,7 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                                   Provider.of<HomeProductsProvider>(context,
                                           listen: false)
                                       .addToFavourite(item);
+                                      print("iTEM ADDED");
                                 },
                                 icon: Icon(
                                   Icons.favorite_outline,

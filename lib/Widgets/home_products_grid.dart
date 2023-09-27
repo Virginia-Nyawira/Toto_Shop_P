@@ -62,7 +62,8 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                                   fontStyle: FontStyle.italic, fontSize: 10.0),
                             ),
 
-                            /// Add to tha favourites List Here
+    /// Add to tha favourites List Here
+    /// Like Button goes here
                             IconButton(
                                 onPressed: () {
                                   Provider.of<HomeProductsProvider>(context,

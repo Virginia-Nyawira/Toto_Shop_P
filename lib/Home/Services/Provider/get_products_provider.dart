@@ -9,6 +9,9 @@ class HomeProductsProvider with ChangeNotifier{
 
 List<HomeProducts> _myHomeProducts=[];
   List<HomeProducts> get homeProducts =>_myHomeProducts;
+  List<HomeProducts> _addToFavourite = [];
+
+  List<HomeProducts> get favouriteProducts => _addToFavourite;
 
   Future<void> getAllProducts () async{
     isLoaded=true;
@@ -20,5 +23,19 @@ List<HomeProducts> _myHomeProducts=[];
     isLoaded=false;
     notifyListeners();
   }
+  
+//Add to favourites list
+  addToFavourite(HomeProducts favProduct){
+    if(favouriteProducts.contains(favProduct)){
+      favouriteProducts.add(favProduct);
+      notifyListeners();
+      print(favouriteProducts);
+    }
+
+    // favouriteProducts.add(favProduct);
+    // notifyListeners();
+    
+  }
+
 
 }

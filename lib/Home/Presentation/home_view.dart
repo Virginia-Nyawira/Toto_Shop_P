@@ -62,7 +62,9 @@ class HomePage extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       "View All",
-                      style: bodyText(),
+                      style: bodyText().copyWith(
+                        color: Colors.blue,
+                      ),
                     ))
               ],
             ),

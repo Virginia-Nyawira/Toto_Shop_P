@@ -56,20 +56,35 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("${item.discount} % off",style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                              fontSize: 10.0
-                            ),),
-                          
-                            IconButton(onPressed: (){},
-                             icon: const Icon(Icons.favorite_outline, size: 18,))
+                            Text(
+                              "${item.discount} % off",
+                              style: const TextStyle(
+                                  fontStyle: FontStyle.italic, fontSize: 10.0),
+                            ),
+
+                            /// Add to tha favourites List Here
+                            IconButton(
+                                onPressed: () {
+                                  Provider.of<HomeProductsProvider>(context,
+                                          listen: false)
+                                      .addToFavourite(item);
+                                },
+                                icon: Icon(
+                                  Icons.favorite_outline,
+                                  size: 18,
+                                  color:
+                                      Provider.of<HomeProductsProvider>(context)
+                                              .favouriteProducts
+                                              .contains(item)
+                                          ? Colors.red
+                                          : Colors.black,
+                                ))
                           ],
                         ),
                       ),
                       Expanded(
                           flex: 3,
                           child: Image.network(
-                            
                             item.image ?? "images/image1.jpg",
                             fit: BoxFit.fill,
                             // height: 170,

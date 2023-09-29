@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toto_shop/Home/Presentation/home_view.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -10,7 +11,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    const Placeholder(),
+    const HomePage(),
     const Placeholder(),
     const Placeholder(),
     //HomePage

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toto_shop/Core/Use_Cases/register_login.dart';
 import 'package:toto_shop/Home/Presentation/home_view.dart';
+import 'package:toto_shop/Widgets/bottom_nav_bar.dart';
 
 import 'Home/Services/Provider/get_products_provider.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePage(),
+        home: const BottomNavigation(),
       ),
     );
   }

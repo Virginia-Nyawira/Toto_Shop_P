@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 child: Text(
-                  'Drawer Header',
+                  'Toto World',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,

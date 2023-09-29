@@ -15,8 +15,38 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                title: const Text('Item 1'),
+                onTap: () {
+                  // Add your logic here
+                },
+              ),
+              ListTile(
+                title: const Text('Item 2'),
+                onTap: () {
+                  // Add your logic here
+                },
+              ),
+
+          ],
+        ),
+      ),
       appBar: AppBar(
-        leading: const Drawer(),
         actions: [
           IconButton(
               onPressed: () {
@@ -28,7 +58,7 @@ class HomePage extends StatelessWidget {
   );
 },
               icon: const Icon(
-                Icons.badge_outlined,
+                Icons.notifications_active,
                 size: 29,
               ))
         ],

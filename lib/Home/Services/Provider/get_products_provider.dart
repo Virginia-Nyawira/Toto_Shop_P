@@ -31,21 +31,11 @@ List<HomeProducts> _myHomeProducts=[];
     print(_favouriteProducts.length);
     print(favProduct.newPrice);
     notifyListeners();
-
-      
-    // if(_favouriteProducts.contains(favProduct)){
-    //   _favouriteProducts.add(favProduct);
-    // print("favouriteProducts succesfully added");
-    //   notifyListeners(); 
-    // }
-    // else{
-    //   print("No item added");
-    // }
-
-    // favouriteProducts.add(favProduct);
-    // notifyListeners();
     
   }
+  
+  /// Logic for managing favorite products using the FavoriteProductsStorage class
+  
 
 
 }

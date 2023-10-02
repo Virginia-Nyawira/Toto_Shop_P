@@ -3,40 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:toto_shop/Home/Models/product_model.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 
-// class FavouriteProducts extends StatelessWidget {
-//   const FavouriteProducts({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     HomeProductsProvider homeProductsProvider =
-//         Provider.of<HomeProductsProvider>(context);
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Colors.purpleAccent,
-//         centerTitle: true,
-//         title: const Text("Favourite Products"),
-//       ),
-//       body: ListView.builder(
-//         itemCount: homeProductsProvider.favouriteProducts.length,
-//         itemBuilder: (context, _) {
-//           // print("itemBuilder called");
-//           if (homeProductsProvider.favouriteProducts.isNotEmpty) {
-//              print("itemBuilder called");
-//             return const Card(
-//               elevation: 10,
-//               child: Text("data"));
-//           } else {
-//             const Card(
-//               elevation: 10,
-//               child: Text("No data"),
-//             );
-//           }
-//         },
-//       ),
-//     );
-//   }
-// }
-
 class FavouriteProducts extends StatefulWidget {
   const FavouriteProducts({super.key});
 

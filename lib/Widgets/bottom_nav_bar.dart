@@ -31,7 +31,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
        return Scaffold(
-      body: FutureBuilder(
+      body: 
+      FutureBuilder(
         future: _initializeData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -47,7 +48,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         },
       ),
       
-      //_pages[_currentIndex],
+     // _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 170, 211, 201),
         currentIndex: _currentIndex,

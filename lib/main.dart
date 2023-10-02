@@ -18,11 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return ChangeNotifierProvider(
-      // providers: [
-      //   ChangeNotifierProvider(create: (context)=>HomeProductsProvider()),
-      // ],
      create: (context) => HomeProductsProvider(), 
-      child: MaterialApp(
+      child: 
+MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -35,4 +33,59 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
 
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ChangeNotifierProvider(
+//       create: (context) => HomeProductsProvider(),
+//       child: FutureBuilder(
+//         future: _initializeData(),
+//         builder: (context, snapshot) {
+//           if (snapshot.connectionState == ConnectionState.waiting) {
+//             // You can return a loading indicator here if needed.
+//             return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//           useMaterial3: true,
+//         ),
+//         home: const Material(
+//           child: Center(child: CircularProgressIndicator()),
+//         ),
+//       );
+//           } 
+//           // else if (snapshot.hasError) {
+//           //   // Handle error case
+//           //   return Center(child: Text('Error: ${snapshot.error}'));
+//           // } 
+//           else {
+//             // Data is ready, return your widget tree
+//             return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//           useMaterial3: true,
+//         ),
+//         home: const BottomNavigation(),
+//       );
+//           }
+//         },
+//       ),
+//     );
+//   }
+
+//    Future<void> _initializeData() async {
+//     final productsProvider = Provider.of<HomeProductsProvider>(context, listen: false);
+//     await productsProvider.getAllProducts();
+//   }
+
+// }

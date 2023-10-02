@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toto_shop/Home/Presentation/favourite_products.dart';
 import 'package:toto_shop/Home/Presentation/home_view.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -12,7 +13,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),
-    const Placeholder(),
+    const FavouriteProducts(),
     const Placeholder(),
     //HomePage
     // CartPage(),

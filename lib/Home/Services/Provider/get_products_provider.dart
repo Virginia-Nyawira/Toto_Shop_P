@@ -9,6 +9,7 @@ class HomeProductsProvider with ChangeNotifier{
 
 List<HomeProducts> _myHomeProducts=[];
   List<HomeProducts> get homeProducts =>_myHomeProducts;
+
   List<HomeProducts> _favouriteProducts = [];
 
   List<HomeProducts> get favouriteProducts => _favouriteProducts;
@@ -25,10 +26,12 @@ List<HomeProducts> _myHomeProducts=[];
   }
   
 //Add to favourites list
-  addToFavourite(HomeProducts favProduct){
+  void addToFavourite(HomeProducts favProduct){
     _favouriteProducts.add(favProduct);
     print(_favouriteProducts.length);
+    print(favProduct.newPrice);
     notifyListeners();
+
       
     // if(_favouriteProducts.contains(favProduct)){
     //   _favouriteProducts.add(favProduct);

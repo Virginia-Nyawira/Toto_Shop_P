@@ -50,12 +50,12 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => const FavouriteProducts(),
-    ),
-  );
+  // Navigator.push(
+  //   context,
+  //   MaterialPageRoute(
+  //     builder: (context) => const FavouriteProducts(),
+  //   ),
+  // );
 },
               icon: const Icon(
                 Icons.notifications_active,

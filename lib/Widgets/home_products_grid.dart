@@ -67,11 +67,29 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                             /// Like Button goes here
                             IconButton(
                                 onPressed: () {
-                                  Provider.of<HomeProductsProvider>(context,
-                                          listen: false)
-                                      .addToFavourite(item);
-                                  print("iTEM ADDED");
+                                  if (value.homeProducts.contains(item)) {
+                                    if (value.favouriteProducts.contains(item)) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                              'Item already added to favourites list'),
+                                        ),
+                                      );
+                                    } else {
+                                      Provider.of<HomeProductsProvider>(context, listen: false)
+                                          .addToFavourite(item);
+                                      print(item.description);
+                                    }
+                                  }
                                 },
+
+                                // Provider.of<HomeProductsProvider>(context,
+                                //         listen: false)
+                                //     .addToFavourite(item);
+                                //     print(item.description);
+                                //  print("iTEM ADDED");
+
                                 icon: Icon(
                                   Icons.favorite_outline,
                                   size: 18,
@@ -115,7 +133,6 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                           ],
                         ),
                       ),
-  
                     ],
                   ),
                 );

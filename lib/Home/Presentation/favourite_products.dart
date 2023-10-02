@@ -65,9 +65,9 @@ class _FavouriteProductsState extends State<FavouriteProducts> {
               final product = favProd[index];
               // ignore: prefer_const_constructors
               return Card(
-                color: Colors.black,
+                //color: Colors.black,
                 elevation: 10,
-                child: Text("product.description"),
+                child: Text(product.seller??''),
               );
               // if (homeProductsProvider.favouriteProducts.isEmpty) {
               //   return const Card(

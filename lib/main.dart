@@ -16,6 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///A call to initialize HomeProductsProvider instance to load the favourite products when the app starts:
+    final productsProvider = Provider.of<HomeProductsProvider>(context);
+    productsProvider.getAllProducts();
+
     return ChangeNotifierProvider(
       create: (context) => HomeProductsProvider(), 
       child: MaterialApp(

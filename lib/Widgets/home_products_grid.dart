@@ -77,7 +77,7 @@ class _HomeProductGridState extends State<HomeProductGrid> {
                                         ),
                                       );
                                     } else {
-                                      Provider.of<HomeProductsProvider>(context, listen: false)
+                                      Provider.of<HomeProductsProvider>(context,listen: false)
                                           .addToFavourite(item);
                                       print(item.description);
                                     }

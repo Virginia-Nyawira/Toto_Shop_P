@@ -50,6 +50,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
+                /// View Cart Page
   // Navigator.push(
   //   context,
   //   MaterialPageRoute(

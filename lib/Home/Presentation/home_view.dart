@@ -58,8 +58,9 @@ class HomePage extends StatelessWidget {
   // );
 },
               icon: const Icon(
-                Icons.notifications_active,
+                Icons.shopping_cart,
                 size: 29,
+                color: Color.fromARGB(255, 119, 39, 10),
               ))
         ],
       ),

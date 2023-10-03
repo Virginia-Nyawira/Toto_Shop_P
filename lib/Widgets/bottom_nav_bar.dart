@@ -18,6 +18,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const HomePage(),
     const FavouriteProducts(),
     const Placeholder(),
+    //const Placeholder(),
   ];
 
 
@@ -50,7 +51,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       
      // _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 170, 211, 201),
+        backgroundColor: Color.fromARGB(255, 163, 108, 134),
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -62,10 +63,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
+              BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favs',
           ),
+          //  //
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Account',

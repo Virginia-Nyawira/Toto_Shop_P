@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:toto_shop/Config/Themes/styles.dart';
+import 'package:toto_shop/Home/Presentation/cart_items_view.dart';
 import 'package:toto_shop/Home/Presentation/favourite_products.dart';
 import 'package:toto_shop/Home/Services/Provider/get_products_provider.dart';
 import 'package:toto_shop/Widgets/home_carousel.dart';
@@ -51,12 +52,12 @@ class HomePage extends StatelessWidget {
           IconButton(
               onPressed: () {
                 /// View Cart Page
-  // Navigator.push(
-  //   context,
-  //   MaterialPageRoute(
-  //     builder: (context) => const FavouriteProducts(),
-  //   ),
-  // );
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => const CartItemView(),
+    ),
+  );
 },
               icon: const Icon(
                 Icons.shopping_cart,

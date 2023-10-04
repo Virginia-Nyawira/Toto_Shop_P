@@ -31,72 +31,76 @@ class _FavouriteProductsState extends State<FavouriteProducts> {
             //itemCount: homeProductsProvider.favouriteProducts.length,
             itemBuilder: (context, index) {
               final product = favProd[index];
-              // ignore: prefer_const_constructors
-              if (favProd.isEmpty) {
-                return Center(
-                  child: Column(
-                    children: [
-                      const Icon(
-                        FontAwesomeIcons.wineGlassEmpty,
-                        color: Colors.brown,
-                        size: 30,
-                      ),
-                      Text(
-                        "No Favourites Yet",
-                        style: titleStyle(),
-                      )
-                    ],
+            if (favProd.isEmpty) {
+ // This part not working!!
+                return Container(
+                  color: Colors.green,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        const Icon(
+                          FontAwesomeIcons.wineGlassEmpty,
+                          color: Colors.brown,
+                          size: 30,
+                        ),
+                        Text(
+                          "No Favourites Yet",
+                          style: titleStyle(),
+                        )
+                      ],
+                    ),
                   ),
                 );
               } else {
                 return Card(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "${product.discount} % off",
-                              style: const TextStyle(
-                                  fontStyle: FontStyle.italic, fontSize: 10.0),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                          flex: 3,
-                          child: Image.network(
-                            product.image ?? "images/image1.jpg",
-                            fit: BoxFit.fill,
-                            // height: 170,
-                            // width: 100,
-                          )),
-                      const Divider(),
-                      //Image.network(item.image ?? "images/image1.jpg"),
-                      Expanded(
-                          child: Text(
-                        "${product.description}",
-                        style: productText(),
-                      )),
-                      Text(
-                        "By ${product.seller}",
-                        style: productText(),
-                      ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("Was: Ksh${product.oldPrice}",
-                                style: opriceText()),
-                            Text("Now: Ksh${product.newPrice}",
-                                style: npriceText()),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: Text(product.description??""),
+                  // Column(
+                  //   crossAxisAlignment: CrossAxisAlignment.center,
+                  //   children: [
+                  //     Expanded(
+                  //       child: Row(
+                  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //         children: [
+                  //           Text(
+                  //             "${product.discount} % off",
+                  //             style: const TextStyle(
+                  //                 fontStyle: FontStyle.italic, fontSize: 10.0),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //     Expanded(
+                  //         flex: 3,
+                  //         child: Image.network(
+                  //           product.image ?? "images/image1.jpg",
+                  //           fit: BoxFit.fill,
+                  //           // height: 170,
+                  //           // width: 100,
+                  //         )),
+                  //     const Divider(),
+                  //     //Image.network(item.image ?? "images/image1.jpg"),
+                  //     Expanded(
+                  //         child: Text(
+                  //       "${product.description}",
+                  //       style: productText(),
+                  //     )),
+                  //     Text(
+                  //       "By ${product.seller}",
+                  //       style: productText(),
+                  //     ),
+                  //     Expanded(
+                  //       child: Column(
+                  //         mainAxisAlignment: MainAxisAlignment.start,
+                  //         children: [
+                  //           Text("Was: Ksh${product.oldPrice}",
+                  //               style: opriceText()),
+                  //           Text("Now: Ksh${product.newPrice}",
+                  //               style: npriceText()),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 );
               }
             },
